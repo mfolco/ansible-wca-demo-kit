@@ -5,7 +5,12 @@
 
   tasks:
     # TASK 1
-    # - name: Install postgresql-server
+    - name: Install postgresql-server
+      # Content suggestion provided by Ansible Lightspeed
+      ansible.builtin.package:
+        name: postgresql-server
+        state: present
+    
 
     # TASK 2
     # Ansible Lightspeed used an easy-to-understand natural language prompt and suggested the correct, more complex PostgreSQL CLI command to initiate the database.
