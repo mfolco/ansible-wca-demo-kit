@@ -23,7 +23,15 @@
         # # 2a. Uncomment task description below and generate a task suggestion.
         # #     Note - Ansible Lightspeed used "ansible.builtin.template" module based on the ".j2" file extension.
         # #     Note - The suggestion set the file permissions ("0644"), owner, and group based on Ansible best practices.
-    # - name: Copy cockpit.conf.j2 to /etc/cockpit
+    - name: Copy cockpit.conf.j2 to /etc/cockpit
+      # Content suggestion provided by Ansible Lightspeed
+      ansible.builtin.template:
+        src: cockpit.conf.j2
+        dest: /etc/cockpit/cockpit.conf
+        owner: root
+        group: root
+        mode: '0644'
+    
 
         # TASK 3
         # # 3a. Uncomment task description below and generate a task suggestion.
