@@ -11,6 +11,7 @@
         name: postgresql-server
         state: present
     
+    
 
     # TASK 2
     # Ansible Lightspeed used an easy-to-understand natural language prompt and suggested the correct, more complex PostgreSQL CLI command to initiate the database.
