@@ -24,7 +24,8 @@
         # #     Note - Context: Ansible Lightspeed used the Playbook name "EC2 Cloud Operations" to use the correct "amazon.aws.ec2_vpc_subnet_info" module.
 
     - name: Gather subnet info tag:Name subnet-lightspeed
-
+    
+    
 
 
         # TASK 2

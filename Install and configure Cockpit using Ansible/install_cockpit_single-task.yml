@@ -17,7 +17,7 @@
       ansible.builtin.package:
         name: cockpit
         state: present
-    
+       
 
         # TASK 2
         # # 2a. Uncomment task description below and generate a task suggestion.

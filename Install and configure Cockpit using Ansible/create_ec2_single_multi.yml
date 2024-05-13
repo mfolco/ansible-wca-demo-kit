@@ -59,10 +59,12 @@
         - name: Create t2.small ec2 instance in subnet demosubnet
           amazon.aws.ec2_instance:
             key_name: "{{ _key_name_ }}"
-            instance_type: t2.small
             image: "{{ _image_ }}"
-            wait: true
+            instance_type: t2.small
             vpc_subnet_id: "{{ subnet.subnet.id }}"
             security_group: demo
+            wait: true
           register: ec2
+        
+
         
