@@ -1,0 +1,30 @@
+# CUSTOM PLAYBOOK #1 — Invoke 2 modules to automatically update 2 types of servers.
+
+---
+# TASK 1
+- name: Update web servers
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Ensure apache is at the latest version
+
+    - name: Write the apache config file where src equals httpd.j2 and dest equals httpd.config
+      ansible.builtin.template:
+        src: httpd.j2
+        dest: /etc/httpd/conf/httpd.conf
+
+
+
+
+
+
+# TASK 2
+- name: Update db servers
+  hosts: databases
+  become: true
+
+  tasks:
+    - name: Ensure postgresql is at the latest version
+
+    - name: Ensure that postgresql is started

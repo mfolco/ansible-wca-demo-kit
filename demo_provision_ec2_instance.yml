@@ -24,8 +24,11 @@
         # #     Note - Context: Ansible Lightspeed used the Playbook name "EC2 Cloud Operations" to use the correct "amazon.aws.ec2_vpc_subnet_info" module.
 
     - name: Gather subnet info tag:Name subnet-lightspeed
-    
-    
+      amazon.aws.ec2_vpc_subnet_info:
+        filters:
+          tag:Name: subnet-lightspeed
+      register: subnet_name
+
 
 
         # TASK 2
@@ -34,6 +37,10 @@
         # #     Note - Accuracy: The suggestion provides the correct key value from the previously task's registered variable.
 
     - name: Create vpc_subnet_id var
+      ansible.builtin.set_fact:
+        vpc_subnet_id: "{{ subnet_name.subnets[0].id }}"
+
+
 
         # TASK 3
         # # 3a. Uncomment task description "Provision t3.micro instance" below and generate a task suggestion.
