@@ -4,3 +4,14 @@
 
   tasks:
     - name: Create an OpenShift cluster
+      ansible.builtin.command: oadm create-cluster --wait=false --name=openshift-cluster
+      register: oadm_create_cluster
+      changed_when: "'created' in oadm_create_cluster.stdout"
+      failed_when: "'already exists' not in oadm_create_cluster.stdout"
+
+
+
+    
+
+
+    
